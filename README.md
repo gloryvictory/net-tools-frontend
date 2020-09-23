@@ -1,9 +1,6 @@
 # net-tools-frontend
 Net-Tools Frontend. the Vue + Vuetify + Vuex project
 
-
-# net-tools-frontend
-
 ## Project setup
 ```
 npm install
@@ -28,4 +25,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-![Example](assets/nslookup.png)
+![Example](public/nslookup.png)
