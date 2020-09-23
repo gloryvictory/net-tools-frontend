@@ -1,8 +1,8 @@
 <template>
     <div class="DNS_Lookup">
-       <h1>DNS_Lookup - Сканирование сети прямой и обратной зоны Контроллера домена</h1>
+       <h1>NSLookup - Сканирование сети прямой и обратной зоны Контроллера домена</h1>
         <v-btn
-          class="ma-2"
+          class="ma-0"
           :loading="loading"
           :disabled="loading"
           color="primary"
@@ -45,9 +45,9 @@ export default {
           },
           { text: 'Контроллер домена', value: 'DC' },
           { text: 'IP адрес контроллера', value: 'DC_IP' },
-          { text: 'FQDN Имя', value: 'FQDN' },
+          { text: 'FQDN', value: 'FQDN' },
           { text: 'FQDN_IP', value: 'FQDN_IP' },
-          { text: 'NAME_BY_IP', value: 'NAME_BY_IP' },
+          { text: 'Обратная зона', value: 'NAME_BY_IP' },
           { text: 'Важность', value: 'WARNING' },
           { text: 'Обновлено', value: 'LASTUPDATE' },
         ]

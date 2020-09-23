@@ -65,7 +65,7 @@ export default {
       drawer: false,
       links: [
         { icon: 'mdi-home', text: 'Home', route: '/' },
-        { icon: 'mdi-folder', text: 'DNS_Lookup', route: '/dnslookup' },
+        { icon: 'mdi-folder', text: 'NSLookup', route: '/dnslookup' },
         { icon: 'mdi-folder', text: 'test', route: '/' },
       ],
     }
