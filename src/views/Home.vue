@@ -5,6 +5,18 @@
      </div>
     <br>
     <p>Набор инструментов для помощи в работе специализированных ИТ подразделений</p>
+    <ul>
+      <li>
+        <v-btn
+          @click.prevent="pushme"
+          :to="this.$route.path"
+       >
+          NSLOOKUP - инструмент для проверки прямой и обратной зоны Контроллера домена
+
+        </v-btn>
+        
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -28,8 +40,15 @@
 
 export default {
   name: 'HomePage',
-  components: {
-    
+  components: {  
+  },
+  methods:{
+    pushme(){
+
+      this.$router.push('/dnslookup');
+    }
+
   }
+
 }
 </script>
