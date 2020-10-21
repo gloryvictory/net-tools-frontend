@@ -3,9 +3,9 @@
 
     <NavBar />
 
-     <v-content class="mx-4 mb-4">
+     <v-main class="mx-4 mb-4">
       <router-view></router-view>
-    </v-content>
+    </v-main>
 
   </v-app>
 </template>

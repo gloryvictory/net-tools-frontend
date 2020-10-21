@@ -8,8 +8,9 @@
     <ul>
       <li>
         <v-btn
+          dark
+          color="primary"
           @click.prevent="pushme"
-          :to="this.$route.path"
        >
           NSLOOKUP - инструмент для проверки прямой и обратной зоны Контроллера домена
 

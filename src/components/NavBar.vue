@@ -30,7 +30,6 @@
         dense
       >
         <v-list-item-group
-          v-model="group"
           
           active-class="white--text text--accent-4"
         >
@@ -44,10 +43,10 @@
                   {{ link.icon }}
             </v-icon>
           </v-list-item-icon>
-            <v-list-tile-title >
+            <v-list-item-title >
               
                   {{ link.text }}
-            </v-list-tile-title>
+            </v-list-item-title>
         </v-list-item>
 
         </v-list-item-group>
