@@ -11,13 +11,22 @@
         >
           Обновить
         </v-btn>
-      
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+        >
+        </v-text-field>
+
         <v-data-table
           class="elevation-1"
           :headers="headers"
           :items="nslookup_data"
           :loading="loading"
           loading-text="Loading... Please wait"
+          :search="search"
+         
         >
 
           <template v-slot:item.WARNING="{ item }">
@@ -39,7 +48,8 @@
             class="text-center"
             cols="12"
           >
-            (C) Вячеслав Замараев, 2020 - 
+
+            (C) ЗВВ, 2020 - 
             {{ new Date().getFullYear() }} год
           </v-col>
         </v-row>
@@ -60,7 +70,8 @@ export default {
       return {
         loading: false,
         loader: null,
-        
+        search: '',
+
         nslookup_data: [],
         headers: [
           {
@@ -80,32 +91,7 @@ export default {
       }
   },
    
-    // watch: {
-    //   loader () {
-    //     const l = this.loader
-    //     this[l] = !this[l]
-
-    //     setTimeout(() => (this[l] = false), 3000)
-
-    //     this.loader = null
-    //   },
-    // },
-  // components: {
-    
-  // },
-  // computed:{
-
-  //     dnslist(){
-  //             //this.data.loading = true;
-  //             //const table_nslookup_data = this.$store.getters.TABLE_NSLOOKUP;
-  //             //this.data.loading = false;
-  //             //return table_nslookup_data;
-  //             return null;
-  //         },
-  //   },
-
     methods: {
-
       getColor (warning) {
         if (warning.includes('HIGH')) return 'red'
         else if (warning.includes('LOW')) return 'orange'
@@ -113,40 +99,25 @@ export default {
         return 'green'
       },
 
-      getData(){
-        
+      getData(){        
         this.loading=true;
         //console.log(this);
         this.nslookup_data = [];
-
-        //setTimeout(() => (this.loading=false), 3000);
-        //const url = "http://localhost:5000/nslookup";
         const url = "http://localhost:5000/nslookuptodb";
         
-
         console.log(Axios.defaults.baseURL);
-        console.log(Axios.defaults.baseURL);
-
+        //console.log(Axios.defaults.baseURL);
         Axios.get(url).then(response => {
             this.nslookup_data = response.data;
             this.loading=false;
           })
-
-
-        //this.nslookup_data = this.$store.getters.TABLE_NSLOOKUP;
-        
-        //alert('OK');
-        //console.log(this);
         return this.nslookup_data;
       },
 
       getDataFromDB(){
-        
         this.loading=true;
         //console.log(this);
         this.nslookup_data = [];
-
-        //setTimeout(() => (this.loading=false), 3000);
         const url = "http://localhost:5000/getnslookupfromdb";
 
         console.log(Axios.defaults.baseURL);
@@ -156,12 +127,6 @@ export default {
             this.nslookup_data = response.data;
             this.loading=false;
           })
-
-
-        //this.nslookup_data = this.$store.getters.TABLE_NSLOOKUP;
-        
-        //alert('OK');
-        //console.log(this);
         return this.nslookup_data;
       },
     },  
